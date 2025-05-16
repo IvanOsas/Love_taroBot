@@ -28,7 +28,10 @@ imageNames.forEach(name => {
 
 sendButton.onclick = () => {
     if (window.Telegram.WebApp) {
+        alert("📤 Отправка в Telegram: " + JSON.stringify(selected));
         Telegram.WebApp.sendData(JSON.stringify(selected));
         Telegram.WebApp.close();
+    } else {
+        alert("❌ Telegram WebApp API недоступен.");
     }
 };
